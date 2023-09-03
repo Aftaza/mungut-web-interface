@@ -4,6 +4,7 @@ class Login{
         this.fields = fields;
         this.validateonSubmit();
     }
+
     validateonSubmit(){
         let self = this;
 
@@ -17,7 +18,7 @@ class Login{
                 }
             });
             if (error == 0) {
-				var data = {
+				var dataIn = {
 					username: document.getElementById('username').value,
 					password: document.getElementById('password').value
 				};
@@ -27,14 +28,22 @@ class Login{
 					headers: {
 						"Content-Type": "application/json; charset=UTF-8",
 					},
-					body: JSON.stringify(data),
+					body: JSON.stringify(dataIn),
 				})
 				.then((response) => response.json())
 				.then((data) => {
 					if (data.status == "success") {
-						localStorage.setItem('user', JSON.stringify(data));
+						fetch("http://127.0.0.1:8000/findusers/"+dataIn.username, {
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json; charset=UTF-8",
+							},
+						}).then((response) => response.json())
+						.then((details) =>{
+							localStorage.setItem('user', JSON.stringify(details.data));
+						})
 						localStorage.setItem('auth', 1);
-                		window.location.replace('/panel');
+                		window.location.replace('/dashboard');
 					}else{
 						console.error("Error", data.msg);
 						document.querySelector(".error-message-all").style.display = "block";
