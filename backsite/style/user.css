@@ -1,0 +1,21 @@
+main .user{
+    display: block !important;
+    /* grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem; */
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main .user:hover{
+    box-shadow: none !important;
+}
+
+main .user > div{
+    display: block;
+    padding: 5px;
+}

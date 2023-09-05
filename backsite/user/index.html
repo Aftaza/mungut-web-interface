@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/user.css">
     <link rel="shortcut icon" href="../../assets/img/mungut_rounded.ico" type="image/x-icon">
     <title>User | Mungut</title>
 </head>
@@ -68,6 +69,67 @@
         </aside>
         <!-- End of Sidebar Section -->
         
+        <!-- Main Content -->
+        <main>
+            <h1>Profile User</h1>
+            <div class="user">
+                <div class="img-profile">
+                    <img src="../images/profile-1.jpg" alt="profile img">
+                    <a href="#">Edit Image</a>
+                </div>
+                <form action="#" method="post">
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <button>Save</button>
+                </form>
+            </div>
+
+        </main>
+        <!-- End of Main Content -->
+
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b id="name"></b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="../images/profile-1.jpg">
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="../images/mungut_round.png">
+                    <h2>Mungut</h2>
+                    <p>Smart Dustbin IoT</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
+    <script src="../../assets/script/authapi.js"></script>
+    <script src="../../assets/script/init.js"></script>
+    <script src="../scripts/orders.js"></script>
+    <script src="../scripts/index.js"></script>
 </body>
 </html>
