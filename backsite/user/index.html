@@ -73,15 +73,24 @@
         <main>
             <h1>Profile User</h1>
             <div class="user">
-                <div class="img-profile">
-                    <img src="../images/profile-1.jpg" alt="profile img">
-                    <a href="#">Edit Image</a>
+                <div class="layout">
+                    <div class="img-profile">
+                        <img src="../images/profile-1.jpg" alt="profile img">
+                        <button type="menu" id="edit-img">Edit Image</button>
+                    </div>
+                    <form method="post">
+                        <div class="group">
+                            <input type="text" name="username" id="username" placeholder="Username">
+                        </div>
+                        <div class="group">
+                            <input type="text" name="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="group">
+                            <input type="password" name="password" id="password" placeholder="Password">
+                        </div>
+                        <button type="submit">Save</button>
+                    </form>
                 </div>
-                <form action="#" method="post">
-                    <input type="text" name="username" id="username" placeholder="Username">
-                    <input type="password" name="password" id="password" placeholder="Password">
-                    <button>Save</button>
-                </form>
             </div>
 
         </main>

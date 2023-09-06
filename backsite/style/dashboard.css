@@ -88,7 +88,7 @@ main .new-users .user-list{
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
     flex-wrap: wrap;
     gap: 1.4rem;
     cursor: pointer;
@@ -99,18 +99,25 @@ main .new-users .user-list:hover{
     box-shadow: none;
 }
 
-main .new-users .user-list .user{
+main .new-users .user-list .user a{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+    padding: 1em;
+}
+
+main .new-users .user-list .user a:hover{
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
 }
 
 main .new-users .user-list .user img{
     width: 5rem;
     height: 5rem;
     margin-bottom: 0.4rem;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 main .recent-orders{

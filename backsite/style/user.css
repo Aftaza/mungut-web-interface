@@ -1,13 +1,8 @@
 main .user{
-    display: block !important;
-    /* grid-template-columns: repeat(2, 1fr);
-    gap: 1.6rem; */
     background-color: var(--color-white);
-    padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
@@ -15,7 +10,76 @@ main .user:hover{
     box-shadow: none !important;
 }
 
-main .user > div{
-    display: block;
+main .user .layout{
+    padding: var(--card-padding);
+    display: flex !important;
+    flex-direction: row;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+main .user .layout .img-profile{
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin: 1.3em;
+}
+
+main .user .layout .img-profile img{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+}
+
+main .user .layout .img-profile button{
+    width: 7em;
+    height: 2.5em;
+    color: var(--color-white);
+    cursor: pointer;
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius-1);
+    transition: all 0.5s ease;
+}
+
+main .user .layout .img-profile button:hover{
+    background-color: var(--color-primary-hover);
+}
+
+main .user .layout form{
+    padding : 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+main .user .layout form .group{
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+main .user .layout form .group input{
+    width: 100%;
+    height: 3em;
     padding: 5px;
+    border: 1px solid var(--color-light);
+    border-radius: var(--border-radius-1);
+}
+
+main .user .layout form button{
+    align-self: flex-end;
+    width: 7em;
+    height: 2.5em;
+    background-color: var(--color-success);
+    color: var(--color-white);
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+main .user .layout form button:hover{
+    background-color: var(--color-success-hover);
 }

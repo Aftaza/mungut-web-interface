@@ -43,7 +43,7 @@ class Login{
 							localStorage.setItem('user', JSON.stringify(details.data));
 						})
 						localStorage.setItem('auth', 1);
-                		window.location.replace('/dashboard');
+                		window.location.replace('/backsite/dashboard');
 					}else{
 						console.error("Error", data.msg);
 						document.querySelector(".error-message-all").style.display = "block";

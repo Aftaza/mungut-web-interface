@@ -12,6 +12,9 @@
     --color-dark-variant: #677483;
     --color-background: #f6f6f9;
 
+    --color-success-hover: #7ad1c2;
+    --color-primary-hover: #adcdf1;
+
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
     --border-radius-2: 1.2rem;
