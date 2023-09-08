@@ -31,31 +31,31 @@
             </div>
 
             <div class="sidebar">
-                <a href="#" class="active">
+                <a href="http://127.0.0.1:5500/backsite/dashboard">
                     <span class="material-icons-sharp">
                         dashboard
                     </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="http://127.0.0.1:5500/backsite/user">
+                <a href="http://127.0.0.1:5500/backsite/user" class="active">
                     <span class="material-icons-sharp">
                         person_outline
                     </span>
                     <h3>Users</h3>
                 </a>
-                <a href="#">
+                <a href="http://127.0.0.1:5500/backsite/devices">
                     <span class="material-icons-sharp">
                         memory
                     </span>
                     <h3>Devices</h3>
                 </a>
-                <a href="#">
+                <a href="http://127.0.0.1:5500/backsite/analytics">
                     <span class="material-icons-sharp">
                         insights
                     </span>
                     <h3>Analytics</h3>
                 </a>
-                <a href="#">
+                <a href="http://127.0.0.1:5500/backsite/inbox">
                     <span class="material-icons-sharp">
                         mail_outline
                     </span>
@@ -163,7 +163,7 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody class="dashboard-table"></tbody>
                 </table>
                 <a href="#">Show All</a>
             </div>
@@ -275,6 +275,20 @@
     <script src="../../assets/script/init.js"></script>
     <script src="../scripts/orders.js"></script>
     <script src="../scripts/index.js"></script>
+    <script>
+        Orders.forEach(order => {
+            const tr = document.createElement('tr');
+            const trContent = `
+                <td>${order.productName}</td>
+                <td>${order.productNumber}</td>
+                <td>${order.paymentStatus}</td>
+                <td class="${order.status === 'Declined' ? 'danger' : order.status === 'Pending' ? 'warning' : 'primary'}">${order.status}</td>
+                <td class="primary">Details</td>
+            `;
+            tr.innerHTML = trContent;
+            document.querySelector('.dashboard-table').appendChild(tr);
+        });
+    </script>
 </body>
 
 </html>

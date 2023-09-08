@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/user.css">
+    <link rel="stylesheet" href="../style/devices.css">
     <link rel="shortcut icon" href="../../assets/img/mungut_rounded.ico" type="image/x-icon">
     <title>User | Mungut</title>
 </head>
@@ -34,13 +34,13 @@
                     </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="http://127.0.0.1:5500/backsite/user" class="active">
+                <a href="http://127.0.0.1:5500/backsite/user">
                     <span class="material-icons-sharp">
                         person_outline
                     </span>
                     <h3>Users</h3>
                 </a>
-                <a href="http://127.0.0.1:5500/backsite/devices">
+                <a href="http://127.0.0.1:5500/backsite/devices" class="active">
                     <span class="material-icons-sharp">
                         memory
                     </span>
@@ -71,26 +71,20 @@
         
         <!-- Main Content -->
         <main>
-            <h1>Profile User</h1>
-            <div class="user">
-                <div class="layout">
-                    <div class="img-profile">
-                        <img src="../images/profile-1.jpg" alt="profile img">
-                        <button type="menu" id="edit-img">Edit Image</button>
-                    </div>
-                    <form method="post">
-                        <div class="group">
-                            <input type="text" name="username" id="username" placeholder="Username">
-                        </div>
-                        <div class="group">
-                            <input type="text" name="email" id="email" placeholder="Email">
-                        </div>
-                        <div class="group">
-                            <input type="password" name="password" id="password" placeholder="Password">
-                        </div>
-                        <button type="submit">Save</button>
-                    </form>
-                </div>
+            <h1>All Devices</h1>
+            <div class="devices">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>MAC</th>
+                            <th>IP</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="device-table"></tbody>
+                </table>
             </div>
 
         </main>
@@ -138,6 +132,21 @@
     </div>
     <script src="../../assets/script/authapi.js"></script>
     <script src="../../assets/script/init.js"></script>
+    <script src="../scripts/devices.js"></script>
     <script src="../scripts/index.js"></script>
+    <script>
+        devices.forEach(device => {
+            const tr = document.createElement('tr');
+            const trContent = `
+                <td>${device.id}</td>
+                <td>${device.name}</td>
+                <td>${device.mac}</td>
+                <td>${device.ip}</td>
+                <td class="${device.status === 'Deactived' ? 'danger' : device.status === 'Problem' ? 'warning' : 'success'}">${device.status}</td>
+            `;
+            tr.innerHTML = trContent;
+            document.querySelector('.device-table').appendChild(tr);
+        });
+    </script>
 </body>
 </html>
